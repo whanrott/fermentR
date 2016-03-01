@@ -1,0 +1,11 @@
+Package: fermentR
+Type: Package
+Title: Converters and Calculators for Brewing and Fermentating
+Version: 0.1.0
+Author: whanrott
+Maintainer: <will@oxfordbrewers.com>
+URL: https://github.com/whanrott/fermentR/
+Description: Converters and calculators for brewers of beer and other fermented drinks. May also be useful to people fermenting or testing the strength of sugar solutions such as honey. Calculations are from published information around the internet. Contains conversions for Brix, Specific Gravity, etc
+License: MIT + file LICENSE
+LazyData: TRUE
+
