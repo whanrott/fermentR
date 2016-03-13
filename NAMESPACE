@@ -3,3 +3,4 @@
 export(abv)
 export(gravity)
 export(mashtemp)
+export(strike)

@@ -8,7 +8,8 @@
 
 ## Bx = (((182.4601*SG -775.6821)*SG +1262.7794)*SG -669.5622) http://medlibrary.org/medwiki/Brix#Tables
 
-#' Convert between Brix, Plato and Specific Gravity in unfermened worts
+#' @title Brewing gravity converter
+#' @description Convert between Brix, Plato and Specific Gravity in unfermented worts
 #' @param x a numeric vector giving the measurement value in its original units.
 #' @param from the unit in which the measurement was made.
 #' @param to	the unit to which the measurement is to be converted.

@@ -4,7 +4,8 @@
 # 3) extract by colour?
 # 4) extract efficiency
 
-#' Calculate mash composition when brewing beer
+#' @title Mash temperature calculator
+#' @description Calculate mash composition when brewing beer
 #' @param ww weight of water in Kg
 #' @param wg weight of grain in Kg
 #' @param tm mash temperature in degrees C
@@ -32,4 +33,19 @@ mashtemp <- function(ww, wg, tm, tw, tg, shw = 1.0, shg = 0.4) {
         ## calculate mash liquor
         return(abs(((shg * tg - tm * shg) * wg)/(shw * tw - tm * shw)))
     }
+}
+
+#' @title Strike Temperature calculator
+#' @description Calculate the strike temperature for hot liquor to achieve a given mash temperature
+#' @param ww weight of water in Kg
+#' @param wg weight of grain in Kg
+#' @param tm mash temperature in degrees C
+#' @param tg temperature of grain in C before mixing
+#' @return the strike temperature in degreed C
+#' @examples
+#' # calculate strike temperature
+#' strike(5,5,63,20)
+#' @export
+strike <- function(ww,wg,tm,tg) {
+  mashtemp(ww, wg, tm, tw = NA, tg)
 }

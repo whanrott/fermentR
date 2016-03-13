@@ -1,6 +1,7 @@
 # abv: a function to calculate Alcohol by Volume
 
-#' Calculates the alcohol by volume (ABV) given starting and finishing gravities
+#' @title Alcohol by Volume calculator
+#' @description Calculates the alcohol by volume (ABV) given starting and finishing gravities
 #' @param og the starting specific gravity of the wort expressed relative to 1 (eg: 1.034)
 #' @param fg the finishing specific gravity of the wort expressed relative to 1 (eg:1.012)
 #' @return alcohol by volume exressed in percentage volume of liquid

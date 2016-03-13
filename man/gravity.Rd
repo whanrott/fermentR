@@ -2,7 +2,7 @@
 % Please edit documentation in R/gravity.R
 \name{gravity}
 \alias{gravity}
-\title{Convert between Brix, Plato and Specific Gravity in unfermened worts}
+\title{Brewing gravity converter}
 \usage{
 gravity(x, from = "brix", to = "sg")
 }
@@ -17,6 +17,6 @@ gravity(x, from = "brix", to = "sg")
 numeric vector in the unit specified
 }
 \description{
-Convert between Brix, Plato and Specific Gravity in unfermened worts
+Convert between Brix, Plato and Specific Gravity in unfermented worts
 }
 

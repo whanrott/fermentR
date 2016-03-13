@@ -2,7 +2,7 @@
 % Please edit documentation in R/abv.R
 \name{abv}
 \alias{abv}
-\title{Calculates the alcohol by volume (ABV) given starting and finishing gravities}
+\title{Alcohol by Volume calculator}
 \usage{
 abv(og, fg)
 }

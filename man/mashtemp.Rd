@@ -2,7 +2,7 @@
 % Please edit documentation in R/mashcalcs.R
 \name{mashtemp}
 \alias{mashtemp}
-\title{Calculate mash composition when brewing beer}
+\title{Mash temperature calculator}
 \usage{
 mashtemp(ww, wg, tm, tw, tg, shw = 1, shg = 0.4)
 }
