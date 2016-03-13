@@ -4,31 +4,32 @@
 # 3) extract by colour?
 # 4) extract efficiency
 
-# ww: weight of water in Kg
-# wg: weight of grain in Kg
-# tm: mash temperature
-# tw: temperature of water in C before mixing
-# tg: temperature of grain in C before mixing
-# shw: specific heat of water in kJ/KgC. Defaults to 1.0kJ/KgC
-# shg: specific heat of grain in kJ/KgC. Defaults to 0.4kJ/KgC
-
-# > mashtemp(5,5,NA,80,20) will calculate the mash temperature
-# [1] 62.85714
-# > mashtemp(5,5,62,NA,20) will calculate strike temperature
-# [1] 78.8
-
-
-mashtemp <- function(ww, wg, tm, tw, tg, shw = 1.0,shg = 0.4) {
-  if(sum(is.na(c(ww,wg,tm, tw,tg,shw,shg))) > 1) {
-    ## put error message here: too many unassigned variables
-    } else if(is.na(tm) == T) {
-    ## calculate mash temperature
-    return(((shw*ww*tw)+(shg*wg*tg))/((shw*ww)+(shg*wg)))
+#' Calculate mash composition when brewing beer
+#' @param ww weight of water in Kg
+#' @param wg weight of grain in Kg
+#' @param tm mash temperature in degrees C
+#' @param tw temperature of water in C before mixing
+#' @param tg temperature of grain in C before mixing
+#' @param shw specific heat of water in kJ/KgC. Defaults to 1.0kJ/KgC
+#' @param shg specific heat of grain in kJ/KgC. Defaults to 0.4kJ/KgC
+#' @return the missing variable in the equation tm=(shw*tw*ww+shg*tg*wg)/(shw*ww+shg*wg)
+#' @examples
+#' # calculate temperature of water when mashing in
+#' mashtemp(ww = 5, wg = 5, tm = NA, tw = 80, tg = 20)
+#' # calculate strike temperature
+#' mashtemp(5,5,63,NA,20)
+#' @export
+mashtemp <- function(ww, wg, tm, tw, tg, shw = 1.0, shg = 0.4) {
+    if (sum(is.na(c(ww, wg, tm, tw, tg, shw, shg))) > 1) {
+        ## put error message here: too many unassigned variables
+    } else if (is.na(tm) == T) {
+        ## calculate mash temperature
+        return(((shw * ww * tw) + (shg * wg * tg))/((shw * ww) + (shg * wg)))
     } else if (is.na(tw) == T) {
-    ## calculate strike temperature (ie water temp)
-      return((tm*shw*ww+(tm*shg-shg*tg)*wg)/(shw*ww))
+        ## calculate strike temperature (ie water temp)
+        return((tm * shw * ww + (tm * shg - shg * tg) * wg)/(shw * ww))
     } else if (is.na(ww)) {
-    ## calculate mash liquor
-      return(abs(((shg*tg-tm*shg)*wg)/(shw*tw-tm*shw)))
+        ## calculate mash liquor
+        return(abs(((shg * tg - tm * shg) * wg)/(shw * tw - tm * shw)))
     }
-  }
+}
