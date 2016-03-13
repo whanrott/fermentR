@@ -16,11 +16,11 @@
 #' @return the missing variable in the equation tm=(shw*tw*ww+shg*tg*wg)/(shw*ww+shg*wg)
 #' @examples
 #' # calculate temperature of water when mashing in
-#' mashtemp(ww = 5, wg = 5, tm = NA, tw = 80, tg = 20)
+#' mash_calcs(ww = 5, wg = 5, tm = NA, tw = 80, tg = 20)
 #' # calculate strike temperature
-#' mashtemp(5,5,63,NA,20)
+#' mash_calcs(5,5,63,NA,20)
 #' @export
-mashtemp <- function(ww, wg, tm, tw, tg, shw = 1.0, shg = 0.4) {
+mash_calcs <- function(ww, wg, tm, tw, tg, shw = 1.0, shg = 0.4) {
     if (sum(is.na(c(ww, wg, tm, tw, tg, shw, shg))) > 1) {
         ## put error message here: too many unassigned variables
     } else if (is.na(tm) == T) {
@@ -47,5 +47,5 @@ mashtemp <- function(ww, wg, tm, tw, tg, shw = 1.0, shg = 0.4) {
 #' strike(5,5,63,20)
 #' @export
 strike <- function(ww,wg,tm,tg) {
-  mashtemp(ww, wg, tm, tw = NA, tg)
+  mash_calcs(ww, wg, tm, tw = NA, tg)
 }

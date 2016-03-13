@@ -2,5 +2,6 @@
 
 export(abv)
 export(gravity)
-export(mashtemp)
+export(hop_calcs)
+export(mash_calcs)
 export(strike)
