@@ -3,6 +3,7 @@
 # 2) water volume & temp required for target strike temperature
 # 3) extract by colour?
 # 4) extract efficiency
+# 5) calibration calculation for thermal loss during mash
 
 #' Mash temperature calculator
 #'
