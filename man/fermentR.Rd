@@ -7,21 +7,27 @@
 \title{fermentR: A package of converters and calculators for brewers of beer and
 other fermented drinks.}
 \arguments{
-\item{Adjunct}{z}
+\item{Adjunct}{Any additions to the mash which do not contribute starch converting enzymes (amylase). Commonly includes added flavourings.}
+
+\item{Goods}{The grist whilst in the mash tun.}
 
 \item{Grist}{The mix of grains and adjuncts which will be combined with liquor in the mash.}
 
-\item{Gyle}{z}
+\item{Gyle}{A batch of beer. Usually a single use of the mash tun.}
+
+\item{Hop}{A strain of the plant Humulus Lupulus which gives flavour to beer and inhibits spoilage micro-organisms. Hops are added to the wort before, during or after the boil. Dry hopping is an addition to the during or after fermentation.}
 
 \item{Liquor}{Water which will be used during the brewing process.}
 
-\item{Malt}{y}
+\item{Malt}{The seed of a cereal crop which has been partially germinated and then kilned. The most common malts are Barley and Wheat.}
 
-\item{Mash}{x}
+\item{Mashing}{The process of mixing liquor and grist at specfic temperatures to release fermentable sugars.}
 
-\item{Sparge}{y}
+\item{Sparge}{The process of rinsing out fermentable sugars from the mash. Fly sparging uses a gentle showering method; batch sparging drains and refills the mash tun.}
 
-\item{Wort}{x}
+\item{Wort}{The liquid which is drained from the mash tun. The wort can be fermented to make beer.}
+
+\item{Yeast}{A micro-organism capable of converting some sugars to alcohol. Usually Saccharomyces Cerevisiae or Saccharomyces Pastorianus. A range of bacteria are also used in some types of brewing.}
 }
 \description{
 This is a placeholder description
