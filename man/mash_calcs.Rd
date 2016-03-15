@@ -2,35 +2,57 @@
 % Please edit documentation in R/mash_calcs.R
 \name{mash_calcs}
 \alias{mash_calcs}
+\alias{step_mash}
+\alias{strike}
 \title{Mash temperature calculator}
 \usage{
-mash_calcs(ww, wg, tm, tw, tg, shw = 1, shg = 0.4)
+mash_calcs(wl = NA, wg = NA, tm = NA, tl = NA, tg = NA, shl = 1,
+  shg = 0.4)
+
+strike(wl, wg, tm, tg)
+
+step_mash(wl, wg, tm, tg)
 }
 \arguments{
-\item{ww}{weight of water in Kg}
+\item{wl}{weight of liquor in Kg (or volume in L)}
 
-\item{wg}{weight of grain in Kg}
+\item{wg}{weight of grist in Kg}
 
-\item{tm}{mash temperature in degrees C}
+\item{tm}{temperature of mash in degrees C after mixing}
 
-\item{tw}{temperature of water in C before mixing}
+\item{tl}{temperature of liquor in degrees C before mixing}
 
-\item{tg}{temperature of grain in C before mixing}
+\item{tg}{temperature of grist in degrees C before mixing}
 
-\item{shw}{specific heat of water in kJ/KgC. Defaults to 1.0kJ/KgC}
+\item{shl}{specific heat of liquor relative to pure water. Defaults to 1.0}
 
-\item{shg}{specific heat of grain in kJ/KgC. Defaults to 0.4kJ/KgC}
+\item{shg}{specific heat of grist relative to the liquor. Defaults to 0.4}
+
+\item{shw}{specific heat of pure water. This is 4.181kJ/Kg/K}
 }
 \value{
-the missing variable in the equation tm=(shw*tw*ww+shg*tg*wg)/(shw*ww+shg*wg)
+the missing variable in the equation tm=(shl*tl*wl+shg*tg*wg)/(shl*wl+shg*wg)
 }
 \description{
-Calculate mash composition when brewing beer
+Use mash_calc() to calculate mash composition when brewing beer. Use strike()
+to calculate the strike temperature for hot liquor to achieve a given mash
+temperature. The word liquor is used here in the brewing sense to mean water
+which is mixed into the mash.
 }
 \examples{
-# calculate temperature of water when mashing in
-mash_calcs(ww = 5, wg = 5, tm = NA, tw = 80, tg = 20)
+# calculate temperature of liquor when mashing in
+mash_calcs(wl = 5, wg = 5, tm = NA, tl = 80, tg = 20)
 # calculate strike temperature
 mash_calcs(5,5,63,NA,20)
+# calculate strike temperature
+strike(5,5,63,20)
+}
+\references{
+Lewis MJ, Young, TW. (2001). Brewing, 2nd Edition. Klewer Academic / Plenum Publishers
+
+B.K Bala & J.L Woods (1991) "Physical and Thermal Properties of Malt", Drying
+ Technology, 9:4, 1091-1104, DOI: 10.1080/07373939108916735
+
+"Feel the Mash Heat", BYO Magazine, Sept 1997. http://byo.com/stories/item/627-feel-the-mash-heat
 }
 

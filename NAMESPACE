@@ -3,5 +3,7 @@
 export(abv)
 export(gravity)
 export(hop_calcs)
+export(hop_weight)
 export(mash_calcs)
+export(step_mash)
 export(strike)

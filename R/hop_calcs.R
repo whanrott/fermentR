@@ -4,6 +4,7 @@
 
 #' @title Hop utilization calculations
 #' @description Calculate hop requirements for brewing beer
+#' @aliases hop_calcs hop_weight
 #' @param hw Weight of hops in g
 #' @param wv Wort volume in L
 #' @param ibu International Bittering Units in mg/L
@@ -13,6 +14,8 @@
 #' @examples
 #' # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3% Alpha Acids and 30 % utilization
 #' hop_calcs(hw = NA, wv = 21, ibu = 25, aa = 0.103, utilization = 0.30)
+#' # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3% Alpha Acids and 30 % utilization
+#' hop_weight(21, 25, 0.103, 0.30)
 #' @references
 #' Lewis MJ, Young, TW. (2001). Brewing, 2nd Edition. Klewer Academic / Plenum Publishers
 #' @export
@@ -41,6 +44,8 @@ hop_calcs <- function(hw, wv, ibu, aa,  utilization) {
   }
 }
 
+#' @rdname hop_calcs
+#' @export
 hop_weight <- function(wv, ibu, aa,  utilization) {
   return(hop_calcs(wv, ibu, aa, utilization, hw = NA))
 }

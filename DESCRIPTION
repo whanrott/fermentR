@@ -3,7 +3,7 @@ Type: Package
 Title: Converters and Calculators for Brewing and Fermentation
 Version: 0.1.0
 Authors@R: c(
-  person("whanrott", , , "will@oxfordbrewers.com", c("aut","cre"))
+  person("whanrott", email = "will@oxfordbrewers.com", role = c("aut","cre"))
   )
 URL: https://github.com/whanrott/fermentR/
 BugReports: https://github.com/whanrott/fermentR/issues
@@ -11,7 +11,7 @@ Description: Converters and calculators for brewers of beer and other fermented
     drinks. May also be useful to people fermenting or testing the strength of sugar
     solutions such as honey. Calculations are from published information referenced
     in help files. Contains conversions for Brix, Specific Gravity, etc
-License: MIT + file LICENSE
+License: GPL-3
 LazyData: TRUE
 Suggests:
     birk
