@@ -3,16 +3,19 @@
 \name{hop_calcs}
 \alias{hop_calcs}
 \alias{hop_weight}
+\alias{ibu}
 \title{Hop utilization calculations}
 \usage{
-hop_calcs(hw, wv, ibu, aa, utilization)
+hop_calcs(mh = NA, vw = NA, ibu = NA, aa = NA, utilization = NA)
 
-hop_weight(wv, ibu, aa, utilization)
+hop_weight(vw, ibu, aa, utilization)
+
+ibu(mh, vw, aa, utilization)
 }
 \arguments{
-\item{hw}{Weight of hops in g}
+\item{mh}{mass of hops in g}
 
-\item{wv}{Wort volume in L}
+\item{vw}{Wort volume in L}
 
 \item{ibu}{International Bittering Units in mg/L}
 
@@ -21,14 +24,14 @@ hop_weight(wv, ibu, aa, utilization)
 \item{utilization}{Percentage hop utilization}
 }
 \value{
-the missing variable in the equation hw = (wv*ibu)/(aa*utilization*1000)
+the missing variable in the equation mh = (vw*ibu)/(aa*utilization*1000)
 }
 \description{
 Calculate hop requirements for brewing beer
 }
 \examples{
 # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \% utilization
-hop_calcs(hw = NA, wv = 21, ibu = 25, aa = 0.103, utilization = 0.30)
+hop_calcs(mh = NA, vw = 21, ibu = 25, aa = 0.103, utilization = 0.30)
 # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \% utilization
 hop_weight(21, 25, 0.103, 0.30)
 }

@@ -14,5 +14,8 @@ Description: Converters and calculators for brewers of beer and other fermented
 License: GPL-3
 LazyData: TRUE
 Suggests:
-    birk
+    birk,
+    knitr,
+    rmarkdown
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr

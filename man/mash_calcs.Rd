@@ -2,21 +2,21 @@
 % Please edit documentation in R/mash_calcs.R
 \name{mash_calcs}
 \alias{mash_calcs}
-\alias{step_mash}
+\alias{step_mash_by_boiling}
 \alias{strike}
 \title{Mash temperature calculator}
 \usage{
-mash_calcs(wl = NA, wg = NA, tm = NA, tl = NA, tg = NA, shl = 1,
+mash_calcs(ml = NA, mg = NA, tm = NA, tl = NA, tg = NA, shl = 1,
   shg = 0.4)
 
-strike(wl, wg, tm, tg)
+strike(ml, mg, tm, tg)
 
-step_mash(wl, wg, tm, tg)
+step_mash_by_boiling(ml, mg, tm, tg)
 }
 \arguments{
-\item{wl}{weight of liquor in Kg (or volume in L)}
+\item{ml}{mass of liquor in Kg (or volume in L)}
 
-\item{wg}{weight of grist in Kg}
+\item{mg}{mass of grist in Kg}
 
 \item{tm}{temperature of mash in degrees C after mixing}
 
@@ -31,17 +31,17 @@ step_mash(wl, wg, tm, tg)
 \item{shw}{specific heat of pure water. This is 4.181kJ/Kg/K}
 }
 \value{
-the missing variable in the equation tm=(shl*tl*wl+shg*tg*wg)/(shl*wl+shg*wg)
+the missing variable in the equation tm=(shl*tl*ml+shg*tg*mg)/(shl*ml+shg*mg)
 }
 \description{
-Use mash_calc() to calculate mash composition when brewing beer. Use strike()
+Use \code{mash_calc} to calculate mash composition when brewing beer. Use \code{strike}
 to calculate the strike temperature for hot liquor to achieve a given mash
 temperature. The word liquor is used here in the brewing sense to mean water
 which is mixed into the mash.
 }
 \examples{
 # calculate temperature of liquor when mashing in
-mash_calcs(wl = 5, wg = 5, tm = NA, tl = 80, tg = 20)
+mash_calcs(ml = 5, mg = 5, tm = NA, tl = 80, tg = 20)
 # calculate strike temperature
 mash_calcs(5,5,63,NA,20)
 # calculate strike temperature

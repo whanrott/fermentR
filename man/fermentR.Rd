@@ -30,17 +30,17 @@ other fermented drinks.}
 \item{Yeast}{A micro-organism capable of converting some sugars to alcohol. Usually Saccharomyces Cerevisiae or Saccharomyces Pastorianus. A range of bacteria are also used in some types of brewing.}
 }
 \description{
-This is a placeholder description
+The fermentR package covers areas of interest to brewers:
 }
 \details{
-The fermentR package covers areas of interest to brewers:
-
-Converting between units of gravity (which measure concentration of sugars in water).
-Calculating useful characteristics water chemistry and suggesting treatment (planned).
-Calculating composition and temperature of mashes.
-Calculating usage and effect of hops.
-Calculating amounts of alcohol in fermented worts.
-Calculating gas volumes in fermented worts and suggesting gas line lengths to control dispense (planned).
+\enumerate{
+\item Converting between units of gravity (which measure concentration of sugars in water).
+\item Calculating useful characteristics water chemistry and suggesting treatment (planned).
+\item Calculating composition and temperature of mashes.
+\item Calculating usage and effect of hops.
+\item Calculating amounts of alcohol in fermented worts.
+\item Calculating gas volumes in fermented worts and suggesting gas line lengths to control dispense (planned).
+}
 }
 \section{some more text}{
 
