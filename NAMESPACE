@@ -3,6 +3,7 @@
 export(abv)
 export(gravity)
 export(hop_calcs)
+export(hop_utilization)
 export(hop_weight)
 export(ibu)
 export(mash_calcs)

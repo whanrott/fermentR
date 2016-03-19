@@ -2,6 +2,7 @@
 % Please edit documentation in R/hop_calcs.R
 \name{hop_calcs}
 \alias{hop_calcs}
+\alias{hop_utilization}
 \alias{hop_weight}
 \alias{ibu}
 \title{Hop utilization calculations}
@@ -11,6 +12,8 @@ hop_calcs(mh = NA, vw = NA, ibu = NA, aa = NA, utilization = NA)
 hop_weight(vw, ibu, aa, utilization)
 
 ibu(mh, vw, aa, utilization)
+
+hop_utilization(mh, vw, ibu, aa)
 }
 \arguments{
 \item{mh}{mass of hops in g}
@@ -34,6 +37,10 @@ Calculate hop requirements for brewing beer
 hop_calcs(mh = NA, vw = 21, ibu = 25, aa = 0.103, utilization = 0.30)
 # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \% utilization
 hop_weight(21, 25, 0.103, 0.30)
+# calculate the ibu of using 17g Cascade hops at 10.3\% Alpha Acids and 30 \% utilization
+ibu(mh = 17, vw = 21, aa = 0.103, utilization = 0.30)
+# calculate the hop utilization
+hop_utilization(mh = 17, vw = 21, ibu = 25, aa = 0.103)
 }
 \references{
 Lewis MJ, Young, TW. (2001). Brewing, 2nd Edition. Klewer Academic / Plenum Publishers
