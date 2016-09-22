@@ -19,6 +19,8 @@ alcohol by volume exressed in percentage volume of liquid using calculations spe
 \description{
 Calculates the alcohol by volume (ABV) given starting and finishing gravities using
 conversion factors set out in the Beer Duty notices. These were taken from Beer Duty Notice #226 on 22/09/2016.
+Reference values are expressed in gravity * 1000, to 1 decimal place. For example 1045.6. This function expects
+gravity to be expressed as 1.0456 but can take values in either format.
 }
 \examples{
 # calculate alcohol by volume for a wort which ferments from 1034 SG to 1008 SG

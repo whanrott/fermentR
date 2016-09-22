@@ -18,6 +18,8 @@ abv <- function(og, fg) {
 #' @title Alcohol by Volume calculator for HMRC returns
 #' @description Calculates the alcohol by volume (ABV) given starting and finishing gravities using
 #' conversion factors set out in the Beer Duty notices. These were taken from Beer Duty Notice #226 on 22/09/2016.
+#' Reference values are expressed in gravity * 1000, to 1 decimal place. For example 1045.6. This function expects
+#' gravity to be expressed as 1.0456 but can take values in either format.
 #' @references https://www.gov.uk/government/publications/excise-notice-226-beer-duty/excise-notice-226-beer-duty--2#calculation-of-alcoholic-strength
 #' @references https://www.gov.uk/government/collections/alcohols-notices
 #' Beer Duty notices and other relevant documentation can be found on the HMRC website
@@ -30,50 +32,17 @@ abv <- function(og, fg) {
 #' abv_hmrc(1.034,1.012)
 #' @export
 abv_hmrc <- function(og, pg, f) {
-  # Value of factor ‘f’ for various alcoholic strengths
-  # (OG - PG)     % ABV     Factor
-  # Up to 6.9     Up to   0.8     0.125
-  #  7.0 -  10.4   0.8 -  1.3     0.126
-  # 10.5 -  17.2   1.3 -  2.1     0.127
-  # 17.3 -  26.1   2.2 -  3.3     0.128
-  # 26.2 -  36.0   3.3 -  4.6     0.129
-  # 36.1 -  46.5   4.6 -  6.0     0.130
-  # 46.6 -  57.1   6.0 -  7.5     0.131
-  # 57.2 -  67.9   7.5 -  9.0     0.132
-  # 68.0 -  78.8   9.0 - 10.5     0.133
-  # 78.9 -  89.7  10.5 - 12.0     0.134
-  # 89.8 - 100.7  12.0 - 13.6     0.135
-  x <- round((og-pg)*1000,1)
-  ## local function to tidy the switch below.
-  ## code borrowed from data.table package but I didn't want to
-  ## require the data.table package for such a simple function
-  between <- function (x, lower, upper, incbounds = TRUE)
-  {
-    if (incbounds)
-      x >= lower & x <= upper
-    else x > lower & x < upper
-  }
-  switch(
-    which(
-      c(
-        between(x,   0, 6.9),
-        between(x, 7.0,10.4),
-        between(x,10.5,17.2),
-        between(x,17.3,26.1),
-        between(x,26.2,36.0),
-        between(x,36.1,46.5),
-        between(x,46.6,57.1),
-        # between(x,,),
-        !between(x,0,100,7)
-        )
-      ),
-    x * 0.125,
-    x * 0.126,
-    x * 0.127,
-    x * 0.128,
-    x * 0.129,
-    x * 0.130,
-    x * 0.131,
-    print("Error: the difference in gravity is either negative or greater than the HMRC calculator provisions for (100.7)")
+  ## input is format 1.xxxx to 4 decimal places. HMRC guidance uses figures 1xxxx.x to 1 dp.
+  if(og > 0 & og < 2) {og <- og*1000}
+  if(pg > 0 & pg < 2) {pg <- pg*1000}
+  x <- (round(og,1)-round(pg,1))
+  switch(which(c(
+    x >    0 & x <=   6.9,    x >  7.0 & x <=  10.4,    x > 10.5 & x <=  17.2,    x > 17.3 & x <=  26.1,
+    x > 26.2 & x <=  36.0,    x > 36.1 & x <=  46.5,    x > 46.6 & x <=  57.1,    x > 57.2 & x <=  67.9,
+    x > 68.0 & x <=  78.8,    x > 78.9 & x <=  89.7,    x > 89.8 & x <= 100.7,    x <=   0 | x >  100.7
+    )),
+    x * 0.125,    x * 0.126,    x * 0.127,    x * 0.128,    x * 0.129,    x * 0.130,    x * 0.131,
+    x * 0.132,    x * 0.133,    x * 0.134,    x * 0.135,
+    print("Error: the difference in gravity betweem OG and PG is either negative or greater than the HMRC calculator provisions for (100.7)")
     )
 }
