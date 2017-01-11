@@ -10,6 +10,8 @@
 #' abv(1.034,1.012)
 #' @export
 abv <- function(og, fg) {
+  if(!is.numeric(c(og,fg)))
+    stop("Error. The gravity should be a number relative to 1. For example 1.042")
   return((76.08 * (og - fg)/(1.775 - og)) * (fg/0.794))
 }
 
