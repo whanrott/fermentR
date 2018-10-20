@@ -45,6 +45,6 @@ abv_hmrc <- function(og, pg, f) {
     )),
     x * 0.125,    x * 0.126,    x * 0.127,    x * 0.128,    x * 0.129,    x * 0.130,    x * 0.131,
     x * 0.132,    x * 0.133,    x * 0.134,    x * 0.135,
-    print("Error: the difference in gravity betweem OG and PG is either negative or greater than the HMRC calculator provisions for (100.7)")
+    warning("Error: the difference in gravity betweem OG and PG is either negative or greater than the HMRC calculator provisions for (100.7)")
     )
 }
