@@ -29,6 +29,12 @@
 #' @param Wort The liquid which is drained from the mash tun. The wort can be fermented to make beer.
 #' @param Yeast A micro-organism capable of converting some sugars to alcohol. Usually Saccharomyces Cerevisiae or Saccharomyces Pastorianus. A range of bacteria are also used in some types of brewing.
 #'
-#' @docType package
-#' @name fermentR
+#' @keywords internal
+"_PACKAGE"
+
+## usethis namespace: start
+#' @import rlang
+#' @importFrom glue glue
+#' @importFrom lifecycle deprecated
+## usethis namespace: end
 NULL

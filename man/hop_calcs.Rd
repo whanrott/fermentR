@@ -2,9 +2,9 @@
 % Please edit documentation in R/hop_calcs.R
 \name{hop_calcs}
 \alias{hop_calcs}
-\alias{hop_utilization}
 \alias{hop_weight}
 \alias{ibu}
+\alias{hop_utilization}
 \title{Hop utilization calculations}
 \usage{
 hop_calcs(mh = NA, vw = NA, ibu = NA, aa = NA, utilization = NA)
@@ -27,15 +27,17 @@ hop_utilization(mh, vw, ibu, aa)
 \item{utilization}{Percentage hop utilization}
 }
 \value{
-the missing variable in the equation mh = (vw*ibu)/(aa*utilization*1000)
+the missing variable in the equation mh = (vw\emph{ibu)/(aa}utilization*1000)
 }
 \description{
 Calculate hop requirements for brewing beer
 }
 \examples{
-# calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \% utilization
+# calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \%
+# utilization
 hop_calcs(mh = NA, vw = 21, ibu = 25, aa = 0.103, utilization = 0.30)
-# calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \% utilization
+# calculate the weight of hops to achieve 25 IBU using Cascade at 10.3\% Alpha Acids and 30 \%
+# utilization
 hop_weight(21, 25, 0.103, 0.30)
 # calculate the ibu of using 17g Cascade hops at 10.3\% Alpha Acids and 30 \% utilization
 ibu(mh = 17, vw = 21, aa = 0.103, utilization = 0.30)
@@ -45,4 +47,3 @@ hop_utilization(mh = 17, vw = 21, ibu = 25, aa = 0.103)
 \references{
 Lewis MJ, Young, TW. (2001). Brewing, 2nd Edition. Klewer Academic / Plenum Publishers
 }
-

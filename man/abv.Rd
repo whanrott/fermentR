@@ -21,4 +21,3 @@ Calculates the alcohol by volume (ABV) given starting and finishing gravities
 # calculate alcohol by volume for a wort which ferments from 1034 SG to 1008 SG
 abv(1.034,1.012)
 }
-

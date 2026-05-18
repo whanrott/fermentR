@@ -10,12 +10,19 @@ BugReports: https://github.com/whanrott/fermentR/issues
 Description: Converters and calculators for brewers of beer and other fermented
     drinks. May also be useful to people fermenting or testing the strength of sugar
     solutions such as honey. Calculations are from published information referenced
-    in help files. Contains conversions for Brix, Specific Gravity, etc
-License: GPL-3
+    in help files. Contains conversions for Brix, Specific Gravity, etc.
+License: GPL (>= 3)
 LazyData: TRUE
 Suggests:
     birk,
     knitr,
     rmarkdown
-RoxygenNote: 5.0.1
+RoxygenNote: 7.3.3
 VignetteBuilder: knitr
+Imports: 
+    cli,
+    glue,
+    lifecycle,
+    rlang,
+    withr
+Roxygen: list(markdown = TRUE)

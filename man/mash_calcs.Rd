@@ -2,12 +2,20 @@
 % Please edit documentation in R/mash_calcs.R
 \name{mash_calcs}
 \alias{mash_calcs}
-\alias{step_mash_by_boiling}
 \alias{strike}
+\alias{step_mash_by_boiling}
 \title{Mash temperature calculator}
 \usage{
-mash_calcs(ml = NA, mg = NA, tm = NA, tl = NA, tg = NA, shl = 1,
-  shg = 0.4)
+mash_calcs(
+  ml = NA,
+  mg = NA,
+  tm = NA,
+  tl = NA,
+  tg = NA,
+  shl = 1,
+  shg = 0.4,
+  shw = 4.181
+)
 
 strike(ml, mg, tm, tg)
 
@@ -31,7 +39,7 @@ step_mash_by_boiling(ml, mg, tm, tg)
 \item{shw}{specific heat of pure water. This is 4.181kJ/Kg/K}
 }
 \value{
-the missing variable in the equation tm=(shl*tl*ml+shg*tg*mg)/(shl*ml+shg*mg)
+the missing variable in the equation tm=(shl\emph{tl}ml+shg\emph{tg}mg)/(shl\emph{ml+shg}mg)
 }
 \description{
 Use \code{mash_calc} to calculate mash composition when brewing beer. Use \code{strike}
@@ -51,8 +59,7 @@ strike(5,5,63,20)
 Lewis MJ, Young, TW. (2001). Brewing, 2nd Edition. Klewer Academic / Plenum Publishers
 
 B.K Bala & J.L Woods (1991) "Physical and Thermal Properties of Malt", Drying
- Technology, 9:4, 1091-1104, DOI: 10.1080/07373939108916735
+Technology, 9:4, 1091-1104, DOI: 10.1080/07373939108916735
 
 "Feel the Mash Heat", BYO Magazine, Sept 1997. http://byo.com/stories/item/627-feel-the-mash-heat
 }
-

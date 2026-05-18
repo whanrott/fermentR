@@ -32,4 +32,3 @@ https://www.gov.uk/government/publications/excise-notice-226-beer-duty/excise-no
 https://www.gov.uk/government/collections/alcohols-notices
 Beer Duty notices and other relevant documentation can be found on the HMRC website
 }
-

@@ -19,4 +19,3 @@ numeric vector in the unit specified
 \description{
 Convert between Brix, Plato and Specific Gravity in unfermented worts
 }
-

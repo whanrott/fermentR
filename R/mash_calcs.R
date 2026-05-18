@@ -38,7 +38,7 @@
 #' "Feel the Mash Heat", BYO Magazine, Sept 1997. http://byo.com/stories/item/627-feel-the-mash-heat
 #'
 #' @export
-mash_calcs <- function(ml = NA, mg = NA, tm = NA, tl = NA, tg = NA, shl = 1.0, shg = 0.4) {
+mash_calcs <- function(ml = NA, mg = NA, tm = NA, tl = NA, tg = NA, shl = 1.0, shg = 0.4, shw = 4.181) {
   tmp <- is.na(list(ml, mg, tm, tl, tg, shl, shg))
   if (sum(tmp) == 0) {
     stop("You can't specify all three values")

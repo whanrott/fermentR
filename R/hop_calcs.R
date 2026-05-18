@@ -12,9 +12,11 @@
 #' @param utilization Percentage hop utilization
 #' @return the missing variable in the equation mh = (vw*ibu)/(aa*utilization*1000)
 #' @examples
-#' # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3% Alpha Acids and 30 % utilization
+#' # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3% Alpha Acids and 30 %
+#' # utilization
 #' hop_calcs(mh = NA, vw = 21, ibu = 25, aa = 0.103, utilization = 0.30)
-#' # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3% Alpha Acids and 30 % utilization
+#' # calculate the weight of hops to achieve 25 IBU using Cascade at 10.3% Alpha Acids and 30 %
+#' # utilization
 #' hop_weight(21, 25, 0.103, 0.30)
 #' # calculate the ibu of using 17g Cascade hops at 10.3% Alpha Acids and 30 % utilization
 #' ibu(mh = 17, vw = 21, aa = 0.103, utilization = 0.30)
