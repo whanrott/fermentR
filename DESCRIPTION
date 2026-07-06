@@ -17,7 +17,6 @@ Suggests:
     birk,
     knitr,
     rmarkdown
-RoxygenNote: 7.3.3
 VignetteBuilder: knitr
 Imports: 
     cli,
@@ -26,3 +25,4 @@ Imports:
     rlang,
     withr
 Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0

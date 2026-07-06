@@ -58,5 +58,10 @@ Useful links:
 \author{
 \strong{Maintainer}: whanrott \email{will@oxfordbrewers.com}
 
+Authors:
+\itemize{
+  \item whanrott \email{will@oxfordbrewers.com}
+}
+
 }
 \keyword{internal}
